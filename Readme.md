@@ -6,14 +6,14 @@
 
 0. visual studio code
 
-1. `code`の拡張パッケージ (Remote Development)[https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers] 
+1. `code`の拡張パッケージ [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 
 ## introduction
 
 0. 作業用ディレクトリを `C:\Users\kotaro\psp2`　とします．
 
 1. このディレクトリに`https://github.com/helmenov/habushu`の中身をすべてダウンロードして配置します．
-  (zipfile)[https://github.com/helmenov/habushu/archive/refs/heads/main.zip]
+   [zipfile](https://github.com/helmenov/habushu/archive/refs/heads/main.zip)
 
     以下のようなディレクトリ構成にしてください．
 
