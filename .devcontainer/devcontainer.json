@@ -1,0 +1,69 @@
+{
+    "name": "habushu",
+    "dockerFile": "../Dockerfile",
+    "containerEnv": {"TZ": "Asia/Tokyo"},
+    "remoteUser": "vscode",
+    "customizations":{
+        "vscode":{
+            "settings": {
+                "ruff.path": "./.venv/bin/ruff",
+                "editor.acceptSuggestionOnEnter": "off",
+                "editor.minimap.enabled": false, // ミニマップを非表示に
+                "editor.renderControlCharacters": true, // 制御文字も表示 U+2066とか出るように
+                "editor.stopRenderingLineAfter": -1, // ファイルのパン屑リストを表示
+                "editor.fontFamily": "'Udev Gothic','Fira Code', Consolas, 'Courier New', monospace",
+                "editor.fontLigatures": false, // 合字を有効化
+                "editor.fontSize": 17, // フォントサイズを17に
+                "editor.renderLineHighlight": "all", // 選択した行の行番号をハイライト
+                "editor.cursorBlinking": "smooth", // カーソル点滅をヌメヌメに
+                "editor.cursorSmoothCaretAnimation": "on", // カーソル点滅をアニメーション
+                "editor.cursorStyle": "block", // カーソル形状をブロックに
+                "editor.bracketPairColorization.enabled": true, // カッコの対応を色付け
+
+                "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+                "python.defaultInterpreterPath": "./.venv/bin/python",
+                "python.testing.pytestEnabled": true,
+                "python.testing.autoTestDiscoverOnSaveEnabled": true,
+                "python.formatting.provider": "none",
+                "python.linting.mypyEnabled": true,
+                "python.linting.enabled": true,
+                "python.linting.mypyCategorySeverity.error": "Information",
+                "python.linting.mypyArgs": [
+                    "--follow-imports=skip",
+                    "--ignore-missing-imports",
+                    "--show-column-numbers",
+                    "--no-pretty",
+                    "--warn-return-any",
+                    "--no-implicit-optional",
+                    "--disallow-untyped-calls",
+                    "--disallow-untyped-defs"
+                ],
+                "python.languageServer" : "Pylance",
+                "python.ternminal.activateEnvInCurrentTerminal": true,
+
+                "files.autoSave": "afterDelay",
+                "files.insertFinalNewline": true, // ファイル末尾に改行を自動挿入
+                "files.autoGuessEncoding": true,
+
+                "[python]": {
+                    "editor.defaultFormatter": "ms-python.black-formatter",
+                    "editor.formatOnSave": true,
+                    "editor.formatOnType": true
+                },
+
+                "terminal.integrated.defaultProfile.windows": "Command Prompt"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.black-formatter",
+                "ms-python.pylint",
+                "ms-python.vscode-pylance",
+                "ms-toolsai.jupyter",
+                "oderwat.indent-rainbow",
+                "shardulm94.trailing-spaces"
+            ]
+        }
+    },
+    "postAttachCommand": ".devcontainer/postAttach.sh"
+}
