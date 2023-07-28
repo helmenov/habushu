@@ -16,7 +16,7 @@ ENV LC_ALL=ja_JP.UTF-8
 WORKDIR /opt
 
 RUN \
-    sed -i s@archive.ubuntu.com@s{apt_get_server}@g /etc/apt/sources.list && \
+    sed -i s@archive.ubuntu.com@${apt_get_server}@g /etc/apt/sources.list && \
     apt-get update && \
     apt-get install -y \
         curl apt-transport-https libarchive-tools ca-certificates git \
